@@ -1,16 +1,16 @@
 const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'learnejs'
-});
+// const conn = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'learnejs'
+// });
 
 conn.connect(err => {
     if (err) throw err;
@@ -26,6 +26,6 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
 })
 
-app.listen(port, () => {
-    console.log("Server run on localhost:", port);
-})
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
