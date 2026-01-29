@@ -12,10 +12,10 @@ const app = express();
 //     database: 'learnejs'
 // });
 
-conn.connect(err => {
-    if (err) throw err;
-    console.log("Connected to MySQL Database!");
-});
+// conn.connect(err => {
+//     if (err) throw err;
+//     console.log("Connected to MySQL Database!");
+// });
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
